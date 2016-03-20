@@ -2115,7 +2115,7 @@ int main()
 {
 	// writers\readers  0   1   2
 	//                  ^   ^   ^
-	// 0			    .   .   .
+	// 0                .   .   .
 	// 1
 	// 2
 	//
@@ -2125,7 +2125,7 @@ int main()
 
 	// writers\readers  0   1   2
 	//
-	// 0			  <-.<->.<->.->
+	// 0              <-.<->.<->.->
 	// 1
 	// 2
 	//
@@ -2155,7 +2155,7 @@ int main()
 	// writers\readers  0   1   2
 	//
 	// 0				
-	// 1			  <-.<->.<->.->
+	// 1              <-.<->.<->.->
 	// 2
 	//
 	test_0reader1writers_unlockReader(SharedMutex());
@@ -2172,8 +2172,8 @@ int main()
 	// writers\readers  0   1   2
 	//
 	// 0				
-	// 1				^   ^   ^
-	// 2				v   v   v
+	// 1                ^   ^   ^
+	// 2                v   v   v
 	//
 	test_0readers1writers_lockWriter(SharedMutex());
 	test_0readers2writers_unlockWriter(SharedMutex());
@@ -2189,7 +2189,7 @@ int main()
 	// writers\readers  0   1   2
 	// 0				
 	// 1
-	// 2			  <-.<->.<->.->
+	// 2              <-.<->.<->.->
 	test_0readers2writers_unlockReader(SharedMutex());
 	test_0readers2writers_lockReader(SharedMutex());
 	test_1reader2writers_blockedReaderAndWriter_unlockReader(SharedMutex());
@@ -2204,7 +2204,7 @@ int main()
 	// writers\readers  0   1   2
 	// 0				
 	// 1
-	// 2			    .   .   .
+	// 2                .   .   .
 	//                  v   v   v
 	test_0readers2writers_lockWriter(SharedMutex());
 	test_1reader2writers_blockedReaderAndWriter_lockWriter(SharedMutex());
